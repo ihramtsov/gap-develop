@@ -1,0 +1,29 @@
+d:\c# Projects\monodevelop-master\main\build\bin\gtkrc.win32
+d:\c# Projects\monodevelop-master\main\build\bin\gtkrc.mac
+d:\c# Projects\monodevelop-master\main\build\bin\gtkrc
+d:\c# Projects\monodevelop-master\main\build\bin\MonoDevelop.Ide.dll.config
+d:\c# Projects\monodevelop-master\main\build\bin\MonoDevelop.Ide.dll
+d:\c# Projects\monodevelop-master\main\build\bin\MonoDevelop.Ide.pdb
+d:\c# Projects\monodevelop-master\main\src\core\MonoDevelop.Ide\obj\Debug\MonoDevelop.Ide.csprojResolveAssemblyReference.cache
+d:\c# Projects\monodevelop-master\main\src\core\MonoDevelop.Ide\obj\Debug\MonoDevelop.Ide.dll
+d:\c# Projects\monodevelop-master\main\src\core\MonoDevelop.Ide\obj\Debug\MonoDevelop.Ide.pdb
+d:\monodevelop-master\main\src\core\MonoDevelop.Ide\obj\Debug\MonoDevelop.Ide.csprojResolveAssemblyReference.cache
+d:\monodevelop-master\main\build\bin\Mono.TextEditor.dll.config
+d:\monodevelop-master\main\build\bin\gtkrc.win32
+d:\monodevelop-master\main\build\bin\gtkrc.mac
+d:\monodevelop-master\main\build\bin\gtkrc
+d:\monodevelop-master\main\build\bin\MonoDevelop.Ide.dll.config
+d:\monodevelop-master\main\build\bin\MonoDevelop.Ide.dll
+d:\monodevelop-master\main\build\bin\MonoDevelop.Ide.pdb
+d:\monodevelop-master\main\src\core\MonoDevelop.Ide\obj\Debug\MonoDevelop.Ide.dll
+d:\monodevelop-master\main\src\core\MonoDevelop.Ide\obj\Debug\MonoDevelop.Ide.pdb
+D:\gapdevelop\build\bin\Mono.TextEditor.dll.config
+D:\gapdevelop\build\bin\gtkrc.win32
+D:\gapdevelop\build\bin\gtkrc.mac
+D:\gapdevelop\build\bin\gtkrc
+D:\gapdevelop\build\bin\MonoDevelop.Ide.dll.config
+D:\gapdevelop\build\bin\MonoDevelop.Ide.dll
+D:\gapdevelop\build\bin\MonoDevelop.Ide.pdb
+D:\gapdevelop\src\core\MonoDevelop.Ide\obj\Debug\MonoDevelop.Ide.csprojResolveAssemblyReference.cache
+D:\gapdevelop\src\core\MonoDevelop.Ide\obj\Debug\MonoDevelop.Ide.dll
+D:\gapdevelop\src\core\MonoDevelop.Ide\obj\Debug\MonoDevelop.Ide.pdb

@@ -1,0 +1,18 @@
+d:\c# Projects\monodevelop-master\main\build\bin\MSBuild\dotnet.4.0\MonoDevelop.Projects.Formats.MSBuild.exe.config
+d:\c# Projects\monodevelop-master\main\build\bin\MSBuild\dotnet.4.0\MonoDevelop.Projects.Formats.MSBuild.exe
+d:\c# Projects\monodevelop-master\main\build\bin\MSBuild\dotnet.4.0\MonoDevelop.Projects.Formats.MSBuild.pdb
+d:\c# Projects\monodevelop-master\main\src\core\MonoDevelop.Projects.Formats.MSBuild\obj\4.0\x86\Debug\MonoDevelop.Projects.Formats.MSBuild.dotnet.v4.0.csprojResolveAssemblyReference.cache
+d:\c# Projects\monodevelop-master\main\src\core\MonoDevelop.Projects.Formats.MSBuild\obj\4.0\x86\Debug\MonoDevelop.Projects.Formats.MSBuild.exe
+d:\c# Projects\monodevelop-master\main\src\core\MonoDevelop.Projects.Formats.MSBuild\obj\4.0\x86\Debug\MonoDevelop.Projects.Formats.MSBuild.pdb
+d:\monodevelop-master\main\build\bin\MSBuild\dotnet.4.0\MonoDevelop.Projects.Formats.MSBuild.exe.config
+d:\monodevelop-master\main\build\bin\MSBuild\dotnet.4.0\MonoDevelop.Projects.Formats.MSBuild.exe
+d:\monodevelop-master\main\build\bin\MSBuild\dotnet.4.0\MonoDevelop.Projects.Formats.MSBuild.pdb
+d:\monodevelop-master\main\src\core\MonoDevelop.Projects.Formats.MSBuild\obj\4.0\x86\Debug\MonoDevelop.Projects.Formats.MSBuild.dotnet.v4.0.csprojResolveAssemblyReference.cache
+d:\monodevelop-master\main\src\core\MonoDevelop.Projects.Formats.MSBuild\obj\4.0\x86\Debug\MonoDevelop.Projects.Formats.MSBuild.exe
+d:\monodevelop-master\main\src\core\MonoDevelop.Projects.Formats.MSBuild\obj\4.0\x86\Debug\MonoDevelop.Projects.Formats.MSBuild.pdb
+D:\gapdevelop\build\bin\MSBuild\dotnet.4.0\MonoDevelop.Projects.Formats.MSBuild.exe.config
+D:\gapdevelop\build\bin\MSBuild\dotnet.4.0\MonoDevelop.Projects.Formats.MSBuild.exe
+D:\gapdevelop\build\bin\MSBuild\dotnet.4.0\MonoDevelop.Projects.Formats.MSBuild.pdb
+D:\gapdevelop\src\core\MonoDevelop.Projects.Formats.MSBuild\obj\4.0\x86\Debug\MonoDevelop.Projects.Formats.MSBuild.dotnet.v4.0.csprojResolveAssemblyReference.cache
+D:\gapdevelop\src\core\MonoDevelop.Projects.Formats.MSBuild\obj\4.0\x86\Debug\MonoDevelop.Projects.Formats.MSBuild.exe
+D:\gapdevelop\src\core\MonoDevelop.Projects.Formats.MSBuild\obj\4.0\x86\Debug\MonoDevelop.Projects.Formats.MSBuild.pdb

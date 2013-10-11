@@ -1,0 +1,18 @@
+d:\c# Projects\monodevelop-master\main\build\bin\MonoDevelop.Core.dll.config
+d:\c# Projects\monodevelop-master\main\build\bin\MonoDevelop.Core.dll
+d:\c# Projects\monodevelop-master\main\build\bin\MonoDevelop.Core.pdb
+d:\c# Projects\monodevelop-master\main\src\core\MonoDevelop.Core\obj\Debug\MonoDevelop.Core.csprojResolveAssemblyReference.cache
+d:\c# Projects\monodevelop-master\main\src\core\MonoDevelop.Core\obj\Debug\MonoDevelop.Core.dll
+d:\c# Projects\monodevelop-master\main\src\core\MonoDevelop.Core\obj\Debug\MonoDevelop.Core.pdb
+d:\monodevelop-master\main\src\core\MonoDevelop.Core\obj\Debug\MonoDevelop.Core.csprojResolveAssemblyReference.cache
+d:\monodevelop-master\main\build\bin\MonoDevelop.Core.dll.config
+d:\monodevelop-master\main\build\bin\MonoDevelop.Core.dll
+d:\monodevelop-master\main\build\bin\MonoDevelop.Core.pdb
+d:\monodevelop-master\main\src\core\MonoDevelop.Core\obj\Debug\MonoDevelop.Core.dll
+d:\monodevelop-master\main\src\core\MonoDevelop.Core\obj\Debug\MonoDevelop.Core.pdb
+D:\gapdevelop\build\bin\MonoDevelop.Core.dll.config
+D:\gapdevelop\build\bin\MonoDevelop.Core.dll
+D:\gapdevelop\build\bin\MonoDevelop.Core.pdb
+D:\gapdevelop\src\core\MonoDevelop.Core\obj\Debug\MonoDevelop.Core.csprojResolveAssemblyReference.cache
+D:\gapdevelop\src\core\MonoDevelop.Core\obj\Debug\MonoDevelop.Core.dll
+D:\gapdevelop\src\core\MonoDevelop.Core\obj\Debug\MonoDevelop.Core.pdb
