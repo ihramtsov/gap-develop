@@ -14,3 +14,4 @@ D:\gapdevelop\build\bin\MonoDevelop.Projects.Formats.MSBuild.exe
 D:\gapdevelop\build\bin\MonoDevelop.Projects.Formats.MSBuild.pdb
 D:\gapdevelop\src\core\MonoDevelop.Projects.Formats.MSBuild\obj\x86\Debug\MonoDevelop.Projects.Formats.MSBuild.exe
 D:\gapdevelop\src\core\MonoDevelop.Projects.Formats.MSBuild\obj\x86\Debug\MonoDevelop.Projects.Formats.MSBuild.pdb
+D:\GAPDEVELOP\src\core\MonoDevelop.Projects.Formats.MSBuild\obj\x86\Debug\MonoDevelop.Projects.Formats.MSBuild.csprojResolveAssemblyReference.cache
