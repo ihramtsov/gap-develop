@@ -1,1 +1,0 @@
-d:\c# Projects\monodevelop-master\main\build\bin\MonoDevelop.exe.config

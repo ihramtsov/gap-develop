@@ -1,2 +1,8 @@
 _ReSharper.Main/
 build/
+*.dll
+*.exe
+*.pdb
+*.cache
+bin/
+obj/

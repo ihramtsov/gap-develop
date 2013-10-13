@@ -1,7 +1,0 @@
-d:\c# Projects\monodevelop-master\main\build\bin\MonoDevelop.exe.addins
-d:\c# Projects\monodevelop-master\main\build\bin\MonoDevelop.exe.config
-d:\c# Projects\monodevelop-master\main\build\bin\MonoDevelop.exe
-d:\c# Projects\monodevelop-master\main\build\bin\MonoDevelop.pdb
-d:\c# Projects\monodevelop-master\main\src\core\MonoDevelop.Startup\obj\Debug\MonoDevelop.Startup.csprojResolveAssemblyReference.cache
-d:\c# Projects\monodevelop-master\main\src\core\MonoDevelop.Startup\obj\Debug\MonoDevelop.exe
-d:\c# Projects\monodevelop-master\main\src\core\MonoDevelop.Startup\obj\Debug\MonoDevelop.pdb
