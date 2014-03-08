@@ -72,7 +72,7 @@
   <ItemGroup>
     <ProjectReference Include="..\mono-addins-master\Mono.Addins\Mono.Addins.csproj">
       <Project>{739d598a-5b63-40f7-b9cc-0e2e35f6afc6}</Project>
-      <Name>Mono.Addins %28Core\Mono.Addins%29</Name>
+      <Name>Mono.Addins</Name>
     </ProjectReference>
     <ProjectReference Include="..\MonoDevelop.Core\MonoDevelop.Core.csproj">
       <Project>{7525BB88-6142-4A26-93B9-A30C6983390A}</Project>
@@ -86,7 +86,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MonoDevelop.Startup\MonoDevelopMain.cs" />
@@ -95,6 +97,7 @@
   <ItemGroup>
     <Content Include="MonoDevelop.exe.addins">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

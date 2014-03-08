@@ -538,7 +538,7 @@
   <ItemGroup>
     <ProjectReference Include="..\mono-addins-master\Mono.Addins\Mono.Addins.csproj">
       <Project>{739d598a-5b63-40f7-b9cc-0e2e35f6afc6}</Project>
-      <Name>Mono.Addins %28Core\Mono.Addins%29</Name>
+      <Name>Mono.Addins</Name>
     </ProjectReference>
     <ProjectReference Include="..\MonoDevelop.Projects.Formats.MSBuild\MonoDevelop.Projects.Formats.MSBuild.csproj">
       <Project>{A437F1A3-78DF-4F00-8053-D32A8B1EB679}</Project>
@@ -547,7 +547,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MonoDevelop.Core.addin.xml" />
+    <EmbeddedResource Include="MonoDevelop.Core.addin.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <Content Include="MonoDevelop.Core.dll.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
