@@ -16,3 +16,9 @@ D:\Новая папка\gap-develop\build\bin\MSBuild\3.5\MonoDevelop.Projects.
 D:\Новая папка\gap-develop\src\core\MonoDevelop.Projects.Formats.MSBuild\obj\3.5\x86\Debug\MonoDevelop.Projects.Formats.MSBuild.v3.5.csprojResolveAssemblyReference.cache
 D:\Новая папка\gap-develop\src\core\MonoDevelop.Projects.Formats.MSBuild\obj\3.5\x86\Debug\MonoDevelop.Projects.Formats.MSBuild.exe
 D:\Новая папка\gap-develop\src\core\MonoDevelop.Projects.Formats.MSBuild\obj\3.5\x86\Debug\MonoDevelop.Projects.Formats.MSBuild.pdb
+D:\gap-develop\build\bin\MSBuild\3.5\MonoDevelop.Projects.Formats.MSBuild.exe.config
+D:\gap-develop\build\bin\MSBuild\3.5\MonoDevelop.Projects.Formats.MSBuild.exe
+D:\gap-develop\build\bin\MSBuild\3.5\MonoDevelop.Projects.Formats.MSBuild.pdb
+D:\gap-develop\src\core\MonoDevelop.Projects.Formats.MSBuild\obj\3.5\x86\Debug\MonoDevelop.Projects.Formats.MSBuild.v3.5.csprojResolveAssemblyReference.cache
+D:\gap-develop\src\core\MonoDevelop.Projects.Formats.MSBuild\obj\3.5\x86\Debug\MonoDevelop.Projects.Formats.MSBuild.exe
+D:\gap-develop\src\core\MonoDevelop.Projects.Formats.MSBuild\obj\3.5\x86\Debug\MonoDevelop.Projects.Formats.MSBuild.pdb
