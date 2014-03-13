@@ -32,259 +32,333 @@ using MonoDevelop.Ide;
 using System.Reflection;
 using Mono.TextEditor;
 
+using MonoDevelop.Ide.Gui.Dialogs;
+using MonoDevelop.Core;
+using MonoDevelop.Ide.Gui;
+using MonoDevelop.Projects;
+using MonoDevelop.Ide.Gui.Content;
+using System.IO;
+using MonoDevelop.Ide.Projects;
+using MonoDevelop.Ide.Desktop;
+using System.Linq;
+
 
 namespace MonoDevelop.Components.MainToolbar
 {
-	class LazyImage : IDisposable
-	{
-		string resourceName;
+    class LazyImage : IDisposable
+    {
+        string resourceName;
 
-		ImageSurface img;
-		public ImageSurface Img {
-			get {
-				if (img == null)
-					img = CairoExtensions.LoadImage (Assembly.GetCallingAssembly (), resourceName);
-				return img;
-			}
-		}
+        ImageSurface img;
+        public ImageSurface Img
+        {
+            get
+            {
+                if (img == null)
+                    img = CairoExtensions.LoadImage(Assembly.GetCallingAssembly(), resourceName);
+                return img;
+            }
+        }
 
-		public LazyImage (string resourceName)
-		{
-			this.resourceName = resourceName;
-		}
+        public LazyImage(string resourceName)
+        {
+            this.resourceName = resourceName;
+        }
 
-		public static implicit operator ImageSurface(LazyImage lazy)
-		{
-			return lazy.Img;
-		}
+        public static implicit operator ImageSurface(LazyImage lazy)
+        {
+            return lazy.Img;
+        }
 
-		public void Dispose ()
-		{
-			if (img != null) {
-				img.Dispose ();
-				img = null;
-			}
-		}
-	}
+        public void Dispose()
+        {
+            if (img != null)
+            {
+                img.Dispose();
+                img = null;
+            }
+        }
+    }
 
-	class RoundButton : Gtk.EventBox
-	{
-		const int height = 32;
-/*		Cairo.Color borderColor;
+    class RoundButton : Gtk.EventBox
+    {
+        const int height = 32;
+        /*		Cairo.Color borderColor;
 
-		Cairo.Color fill0Color;
-		Cairo.Color fill1Color;
-		Cairo.Color fill2Color;
-		Cairo.Color fill3Color;*/
+                Cairo.Color fill0Color;
+                Cairo.Color fill1Color;
+                Cairo.Color fill2Color;
+                Cairo.Color fill3Color;*/
 
-		LazyImage btnNormal/*, btnInactive, btnHover, btnPressed*/;
+        LazyImage btnNormal/*, btnInactive, btnHover, btnPressed*/;
 
-		LazyImage iconRunNormal, iconRunDisabled;
-		LazyImage iconStopNormal, iconStopDisabled;
-		LazyImage iconBuildNormal, iconBuildDisabled;
+        LazyImage iconRunNormal, iconRunDisabled;
+        LazyImage iconStopNormal, iconStopDisabled;
+        LazyImage iconBuildNormal, iconBuildDisabled;
 
-		public enum OperationIcon {
-			Run,
-			Build,
-			Stop
-		}
+        public enum OperationIcon
+        {
+            Run,
+            Build,
+            Stop
+        }
 
-		public RoundButton ()
-		{
-			WidgetFlags |= Gtk.WidgetFlags.AppPaintable;
-			Events |= EventMask.ButtonPressMask | EventMask.ButtonReleaseMask | EventMask.LeaveNotifyMask | EventMask.PointerMotionMask;
-			VisibleWindow = false;
-			SetSizeRequest (height, height);
+        public RoundButton()
+        {
+            WidgetFlags |= Gtk.WidgetFlags.AppPaintable;
+            Events |= EventMask.ButtonPressMask | EventMask.ButtonReleaseMask | EventMask.LeaveNotifyMask | EventMask.PointerMotionMask;
+            VisibleWindow = false;
+            SetSizeRequest(height, height);
 
-			btnNormal = new LazyImage ("btExecuteBase-Normal.png");
-//			btnInactive = new LazyImage ("btExecuteBase-Disabled.png");
-			//btnPressed = new LazyImage ("btExecuteBase-Pressed.png");
-//			btnHover = new LazyImage ("btExecuteBase-Hover.png");
+            btnNormal = new LazyImage("btExecuteBase-Normal.png");
+            //			btnInactive = new LazyImage ("btExecuteBase-Disabled.png");
+            //btnPressed = new LazyImage ("btExecuteBase-Pressed.png");
+            //			btnHover = new LazyImage ("btExecuteBase-Hover.png");
 
-			iconRunNormal = new LazyImage ("icoExecute-Normal.png");
-			iconRunDisabled = new LazyImage ("icoExecute-Disabled.png");
+            iconRunNormal = new LazyImage("icoExecute-Normal.png");
+            iconRunDisabled = new LazyImage("icoExecute-Disabled.png");
 
-			iconStopNormal = new LazyImage ("icoStop-Normal.png");
-			iconStopDisabled = new LazyImage ("icoStop-Disabled.png");
+            iconStopNormal = new LazyImage("icoStop-Normal.png");
+            iconStopDisabled = new LazyImage("icoStop-Disabled.png");
 
-			iconBuildNormal = new LazyImage ("icoBuild-Normal.png");
-			iconBuildDisabled = new LazyImage ("icoBuild-Disabled.png");
-		}
+            iconBuildNormal = new LazyImage("icoBuild-Normal.png");
+            iconBuildDisabled = new LazyImage("icoBuild-Disabled.png");
+        }
 
-		StateType hoverState = StateType.Normal;
+        StateType hoverState = StateType.Normal;
 
-		protected override bool OnMotionNotifyEvent (EventMotion evnt)
-		{
+        protected override bool OnMotionNotifyEvent(EventMotion evnt)
+        {
 
-			State = IsInside (evnt.X, evnt.Y) ? hoverState : StateType.Normal;;
-			return base.OnMotionNotifyEvent (evnt);
-		}
+            State = IsInside(evnt.X, evnt.Y) ? hoverState : StateType.Normal; ;
+            return base.OnMotionNotifyEvent(evnt);
+        }
 
 
-		protected override bool OnLeaveNotifyEvent (EventCrossing evnt)
-		{
-			State = StateType.Normal;
-			return base.OnLeaveNotifyEvent (evnt);
-		}
+        protected override bool OnLeaveNotifyEvent(EventCrossing evnt)
+        {
+            State = StateType.Normal;
+            return base.OnLeaveNotifyEvent(evnt);
+        }
 
-		protected override bool OnButtonPressEvent (EventButton evnt)
-		{
-			if (evnt.Button == 1 && IsInside (evnt.X, evnt.Y)) {
-				hoverState = State = StateType.Selected;
-			}
-			return true;
-		}
+        protected override bool OnButtonPressEvent(EventButton evnt)
+        {
+            if (evnt.Button == 1 && IsInside(evnt.X, evnt.Y))
+            {
+                hoverState = State = StateType.Selected;
+            }
+            return true;
+        }
 
-		protected override bool OnButtonReleaseEvent (EventButton evnt)
-		{
-			if (State == StateType.Selected)
-				OnClicked (EventArgs.Empty);
-			State = IsInside (evnt.X, evnt.Y) ? StateType.Prelight : StateType.Normal;;
-			hoverState = StateType.Prelight; 
-			return true;
-		}
+        protected override bool OnButtonReleaseEvent(EventButton evnt)
+        {
+            if (State == StateType.Selected)
+                OnClicked(EventArgs.Empty);
+            State = IsInside(evnt.X, evnt.Y) ? StateType.Prelight : StateType.Normal; ;
+            hoverState = StateType.Prelight;
+            return true;
+        }
 
-		bool IsInside (double x, double y)
-		{
-			var xr = x - Allocation.Width / 2;
-			var yr = y - Allocation.Height / 2;
-			return Math.Sqrt (xr * xr + yr * yr) <= height / 2;
-		}
+        bool IsInside(double x, double y)
+        {
+            var xr = x - Allocation.Width / 2;
+            var yr = y - Allocation.Height / 2;
+            return Math.Sqrt(xr * xr + yr * yr) <= height / 2;
+        }
 
-		protected override void OnSizeRequested (ref Requisition requisition)
-		{
-			requisition.Width = btnNormal.Img.Width;
-			requisition.Height = btnNormal.Img.Height + 2;
-			base.OnSizeRequested (ref requisition);
-		}
+        protected override void OnSizeRequested(ref Requisition requisition)
+        {
+            requisition.Width = btnNormal.Img.Width;
+            requisition.Height = btnNormal.Img.Height + 2;
+            base.OnSizeRequested(ref requisition);
+        }
 
-		ImageSurface GetIcon()
-		{
-			switch (icon) {
-			case OperationIcon.Stop:
-				return State ==  StateType.Insensitive ? iconStopDisabled : iconStopNormal;
-			case OperationIcon.Run:
-				return State ==  StateType.Insensitive ? iconRunDisabled : iconRunNormal;
-			case OperationIcon.Build:
-				return State ==  StateType.Insensitive ? iconBuildDisabled : iconBuildNormal;
-			}
-			throw new InvalidOperationException ();
-		}
+        ImageSurface GetIcon()
+        {
+            switch (icon)
+            {
+                case OperationIcon.Stop:
+                    return State == StateType.Insensitive ? iconStopDisabled : iconStopNormal;
+                case OperationIcon.Run:
+                    return State == StateType.Insensitive ? iconRunDisabled : iconRunNormal;
+                case OperationIcon.Build:
+                    return State == StateType.Insensitive ? iconBuildDisabled : iconBuildNormal;
+            }
+            throw new InvalidOperationException();
+        }
 
-		OperationIcon icon;
-		public OperationIcon Icon {
-			get { return icon; }
-			set {
-				if (value != icon) {
-					icon = value;
-					QueueDraw ();
-				}
-			}
-		}
+        OperationIcon icon;
+        public OperationIcon Icon
+        {
+            get { return icon; }
+            set
+            {
+                if (value != icon)
+                {
+                    icon = value;
+                    QueueDraw();
+                }
+            }
+        }
 
-		protected override bool OnExposeEvent (EventExpose evnt)
-		{
-			using (var context = Gdk.CairoHelper.Create (evnt.Window)) {
-				DrawBackground (context, Allocation, 15, State);
-				var icon = GetIcon();
-				icon.Show (
-					context,
-					Allocation.X + Math.Max (0, (Allocation.Width - icon.Width) / 2),
-					Allocation.Y + Math.Max (0, (Allocation.Height - icon.Height) / 2)
-				);
-			}
-			return base.OnExposeEvent (evnt);
-		}
+        protected override bool OnExposeEvent(EventExpose evnt)
+        {
+            using (var context = Gdk.CairoHelper.Create(evnt.Window))
+            {
+                DrawBackground(context, Allocation, 15, State);
+                var icon = GetIcon();
+                icon.Show(
+                    context,
+                    Allocation.X + Math.Max(0, (Allocation.Width - icon.Width) / 2),
+                    Allocation.Y + Math.Max(0, (Allocation.Height - icon.Height) / 2)
+                );
+            }
+            return base.OnExposeEvent(evnt);
+        }
 
-		void DrawBackground (Cairo.Context context, Gdk.Rectangle region, int radius, StateType state)
-		{
-			double rad = radius - 0.5;
-			int centerX = region.X + region.Width / 2;
-			int centerY = region.Y + region.Height / 2;
+        void DrawBackground(Cairo.Context context, Gdk.Rectangle region, int radius, StateType state)
+        {
+            double rad = radius - 0.5;
+            int centerX = region.X + region.Width / 2;
+            int centerY = region.Y + region.Height / 2;
 
-			context.MoveTo (centerX + rad, centerY);
-			context.Arc (centerX, centerY, rad, 0, Math.PI * 2);
+            context.MoveTo(centerX + rad, centerY);
+            context.Arc(centerX, centerY, rad, 0, Math.PI * 2);
 
-			double high;
-			double low;
-			switch (state) {
-			case StateType.Selected:
-				high = 0.85;
-				low = 1.0;
-				break;
-			case StateType.Prelight:
-				high = 1.0;
-				low = 0.9;
-				break;
-			case StateType.Insensitive:
-				high = 0.95;
-				low = 0.83;
-				break;
-			default:
-				high = 1.0;
-				low = 0.85;
-				break;
-			}
-			using (var lg = new LinearGradient (0, centerY - rad, 0, centerY +rad)) {
-				lg.AddColorStop (0, new Cairo.Color (high, high, high));
-				lg.AddColorStop (1, new Cairo.Color (low, low, low));
-				context.SetSource (lg);
-				context.FillPreserve ();
-			}
+            double high;
+            double low;
+            switch (state)
+            {
+                case StateType.Selected:
+                    high = 0.85;
+                    low = 1.0;
+                    break;
+                case StateType.Prelight:
+                    high = 1.0;
+                    low = 0.9;
+                    break;
+                case StateType.Insensitive:
+                    high = 0.95;
+                    low = 0.83;
+                    break;
+                default:
+                    high = 1.0;
+                    low = 0.85;
+                    break;
+            }
+            using (var lg = new LinearGradient(0, centerY - rad, 0, centerY + rad))
+            {
+                lg.AddColorStop(0, new Cairo.Color(high, high, high));
+                lg.AddColorStop(1, new Cairo.Color(low, low, low));
+                context.SetSource(lg);
+                context.FillPreserve();
+            }
 
-			context.SetSourceRGBA (0, 0, 0, 0.4);
-			context.LineWidth = 1;
-			context.Stroke ();
-		}
+            context.SetSourceRGBA(0, 0, 0, 0.4);
+            context.LineWidth = 1;
+            context.Stroke();
+        }
 
-		public event EventHandler Clicked;
+        public event EventHandler Clicked;
 
-		protected virtual void OnClicked (EventArgs e)
-		{
-			EventHandler handler = this.Clicked;
-			if (handler != null)
-				handler (this, e);
-		}
+        protected virtual void OnClicked(EventArgs e)
+        {
+            EventHandler handler = this.Clicked;
+            if (handler != null)
+            {
+                Application.Init();
 
-		protected override void OnDestroyed ()
-		{
-			base.OnDestroyed ();
+                //Create the Window
+                Gtk.Window myWin = new Gtk.Window("My first GTK# Application! ");
+                myWin.Resize(400, 100);
+                Fixed fix = new Fixed();
 
-			if (btnNormal != null) {
-				btnNormal.Dispose ();
-				btnNormal = null;
-			}
 
-			if (iconRunNormal != null) {
-				iconRunNormal.Dispose ();
-				iconRunNormal = null;
-			}
+                Button open = new Button("open");
+                fix.Put(open, 350, 70);
+                myWin.Add(fix);
+                open.Clicked += OnClick;
+                //Show Everything     
+                myWin.ShowAll();
 
-			if (iconRunDisabled != null) {
-				iconRunDisabled.Dispose ();
-				iconRunDisabled = null;
-			}
 
-			if (iconStopNormal != null) {
-				iconStopNormal.Dispose ();
-				iconStopNormal = null;
-			}
+                Application.Run();
+                //				handler (this, e);
+            }
+        }
+        void OnClick(object sender, EventArgs args)
+        {
+            var dlg = new OpenFileDialog(GettextCatalog.GetString("File to Open"), Gtk.FileChooserAction.Open)
+            {
+                TransientFor = MonoDevelop.Ide.IdeApp.Workbench.RootWindow,
+                ShowEncodingSelector = true,
+                ShowViewerSelector = true,
+            };
+            if (!dlg.Run())
+                return;
 
-			if (iconStopDisabled != null) {
-				iconStopDisabled.Dispose ();
-				iconStopDisabled = null;
-			}
+            var file = dlg.SelectedFile;
 
-			if (iconBuildNormal != null) {
-				iconBuildNormal.Dispose ();
-				iconBuildNormal = null;
-			}
+            if (dlg.SelectedViewer != null)
+            {
+                dlg.SelectedViewer.OpenFile(file, dlg.Encoding);
+                return;
+            }
 
-			if (iconBuildDisabled != null) {
-				iconBuildDisabled.Dispose ();
-				iconBuildDisabled = null;
-			}
-		}
-	}
+            if (MonoDevelop.Projects.Services.ProjectService.IsWorkspaceItemFile(file) || MonoDevelop.Projects.Services.ProjectService.IsSolutionItemFile(file))
+            {
+                MonoDevelop.Ide.IdeApp.Workspace.OpenWorkspaceItem(file, dlg.CloseCurrentWorkspace);
+            }
+            else
+                MonoDevelop.Ide.IdeApp.Workbench.OpenDocument(file, dlg.Encoding);
+        }
+
+        protected override void OnDestroyed()
+        {
+            base.OnDestroyed();
+
+            if (btnNormal != null)
+            {
+                btnNormal.Dispose();
+                btnNormal = null;
+            }
+
+            if (iconRunNormal != null)
+            {
+                iconRunNormal.Dispose();
+                iconRunNormal = null;
+            }
+
+            if (iconRunDisabled != null)
+            {
+                iconRunDisabled.Dispose();
+                iconRunDisabled = null;
+            }
+
+            if (iconStopNormal != null)
+            {
+                iconStopNormal.Dispose();
+                iconStopNormal = null;
+            }
+
+            if (iconStopDisabled != null)
+            {
+                iconStopDisabled.Dispose();
+                iconStopDisabled = null;
+            }
+
+            if (iconBuildNormal != null)
+            {
+                iconBuildNormal.Dispose();
+                iconBuildNormal = null;
+            }
+
+            if (iconBuildDisabled != null)
+            {
+                iconBuildDisabled.Dispose();
+                iconBuildDisabled = null;
+            }
+        }
+    }
 }
 
