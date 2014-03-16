@@ -58,7 +58,7 @@ namespace MonoDevelop.Components.MainToolbar
 
         HBox contentBox = new HBox(false, 0);
 
-        HBox configurationCombosBox;
+        //		HBox configurationCombosBox;
 
         ComboBox configurationCombo;
         TreeStore configurationStore = new TreeStore(typeof(string), typeof(string));
@@ -72,8 +72,8 @@ namespace MonoDevelop.Components.MainToolbar
         static object lastCommandTarget;
 
         ButtonBar buttonBar = new ButtonBar();
-        RoundButton button = new RoundButton();
-        Alignment buttonBarBox;
+        //		RoundButton button = new RoundButton ();
+        //		Alignment buttonBarBox;
 
         HashSet<string> visibleBars = new HashSet<string>();
 
@@ -172,8 +172,8 @@ namespace MonoDevelop.Components.MainToolbar
 
             WidgetFlags |= Gtk.WidgetFlags.AppPaintable;
 
-            AddWidget(button);
-            AddSpace(8);
+            //			AddWidget (button);
+            //			AddSpace (8);
 
             configurationCombo = new Gtk.ComboBox();
             configurationCombo.Model = configurationStore;
@@ -181,11 +181,11 @@ namespace MonoDevelop.Components.MainToolbar
             configurationCombo.PackStart(ctx, true);
             configurationCombo.AddAttribute(ctx, "text", 0);
 
-            configurationCombosBox = new HBox(false, 8);
+            //			configurationCombosBox = new HBox (false, 8);
 
-            var configurationComboVBox = new VBox();
-            configurationComboVBox.PackStart(configurationCombo, true, false, 0);
-            configurationCombosBox.PackStart(configurationComboVBox, false, false, 0);
+            //			var configurationComboVBox = new VBox ();
+            //			configurationComboVBox.PackStart (configurationCombo, true, false, 0);
+            //			configurationCombosBox.PackStart (configurationComboVBox, false, false, 0);
 
             runtimeCombo = new Gtk.ComboBox();
             runtimeCombo.Model = runtimeStore;
@@ -194,25 +194,25 @@ namespace MonoDevelop.Components.MainToolbar
             runtimeCombo.SetCellDataFunc(ctx, RuntimeRenderCell);
             runtimeCombo.RowSeparatorFunc = RuntimeIsSeparator;
 
-            var runtimeComboVBox = new VBox();
-            runtimeComboVBox.PackStart(runtimeCombo, true, false, 0);
-            configurationCombosBox.PackStart(runtimeComboVBox, false, false, 0);
-            AddWidget(configurationCombosBox);
+            //			var runtimeComboVBox = new VBox ();
+            //			runtimeComboVBox.PackStart (runtimeCombo, true, false, 0);
+            //			configurationCombosBox.PackStart (runtimeComboVBox, false, false, 0);
+            //			AddWidget (configurationCombosBox);
 
-            buttonBarBox = new Alignment(0.5f, 0.5f, 0, 0);
-            buttonBarBox.LeftPadding = (uint)7;
-            buttonBarBox.Add(buttonBar);
-            buttonBarBox.NoShowAll = true;
-            AddWidget(buttonBarBox);
-            AddSpace(24);
+            //			buttonBarBox = new Alignment (0.5f, 0.5f, 0, 0);
+            //			buttonBarBox.LeftPadding = (uint) 7;
+            //			buttonBarBox.Add (buttonBar);
+            //			buttonBarBox.NoShowAll = true;
+            //			AddWidget (buttonBarBox);
+            //			AddSpace (24);
 
             statusArea = new StatusArea();
             statusArea.ShowMessage(BrandingService.ApplicationName);
 
             var statusAreaAlign = new Alignment(0, 0, 1, 1);
             statusAreaAlign.Add(statusArea);
-            contentBox.PackStart(statusAreaAlign, true, true, 0);
-            AddSpace(24);
+            //			contentBox.PackStart (statusAreaAlign, true, true, 0);
+            //			AddSpace (24);
 
             statusAreaAlign.SizeAllocated += (object o, SizeAllocatedArgs args) =>
             {
@@ -231,7 +231,7 @@ namespace MonoDevelop.Components.MainToolbar
                     statusAreaAlign.SetPadding(0, 0, (uint)left_padding, (uint)right_padding);
             };
 
-            matchEntry = new SearchEntry();                // та штука справа, где search
+            matchEntry = new SearchEntry();
 
             var searchFiles = this.matchEntry.AddMenuItem(GettextCatalog.GetString("Search Files"));
             searchFiles.Activated += delegate
@@ -250,6 +250,7 @@ namespace MonoDevelop.Components.MainToolbar
             };
 
             matchEntry.ForceFilterButtonVisible = true;
+            matchEntry.ForceFilterButtonVisible = false;
             matchEntry.Entry.FocusOutEvent += delegate
             {
                 matchEntry.Entry.Text = "";
@@ -263,6 +264,7 @@ namespace MonoDevelop.Components.MainToolbar
 
             matchEntry.Ready = true;
             matchEntry.Visible = true;
+            //            matchEntry.Visible = false;
             matchEntry.IsCheckMenu = true;
             matchEntry.Entry.ModifyBase(StateType.Normal, Style.White);
             matchEntry.WidthRequest = 240;
@@ -322,7 +324,7 @@ namespace MonoDevelop.Components.MainToolbar
                     BuildToolbar();
             };
 
-            contentBox.PackStart(matchEntry, false, false, 0);
+            //			contentBox.PackStart (matchEntry, false, false, 0);
 
             var align = new Gtk.Alignment(0, 0, 1f, 1f);
             align.Show();
@@ -336,7 +338,7 @@ namespace MonoDevelop.Components.MainToolbar
             SetDefaultSizes(-1, 21);
             UpdateCombos();
 
-            button.Clicked += HandleStartButtonClicked;
+            //			button.Clicked += HandleStartButtonClicked;
             IdeApp.CommandService.RegisterCommandBar(this);
 
             IdeApp.CommandService.ActiveWidgetChanged += (sender, e) =>
@@ -436,7 +438,7 @@ namespace MonoDevelop.Components.MainToolbar
 
         void SetDefaultSizes(int comboHeight, int height)
         {
-            configurationCombo.SetSizeRequest(150, comboHeight);
+            //			configurationCombo.SetSizeRequest (150, comboHeight);
             runtimeCombo.SetSizeRequest(150, comboHeight);
             statusArea.SetSizeRequest(32, 32);
             matchEntry.HeightRequest = height + 4;
@@ -457,11 +459,11 @@ namespace MonoDevelop.Components.MainToolbar
             var bars = AddinManager.GetExtensionNodes(ToolbarExtensionPath).Cast<ItemSetCodon>().Where(n => visibleBars.Contains(n.Id)).ToList();
             if (!bars.Any())
             {
-                buttonBarBox.Hide();
+                //				buttonBarBox.Hide ();
                 return;
             }
 
-            buttonBarBox.Show();
+            //			buttonBarBox.Show ();
             buttonBar.ShowAll();
             foreach (var bar in bars)
             {
@@ -958,19 +960,19 @@ namespace MonoDevelop.Components.MainToolbar
                 return;
             RoundButton.OperationIcon operation;
             var ci = GetStartButtonCommandInfo(out operation);
-            if (ci.Enabled != button.Sensitive)
-                button.Sensitive = ci.Enabled;
+            //			if (ci.Enabled != button.Sensitive)
+            //				button.Sensitive = ci.Enabled;
 
-            button.Icon = operation;
+            //			button.Icon = operation;
             var stopped = operation != RoundButton.OperationIcon.Stop;
-            if (configurationCombosBox.Sensitive != stopped)
-                configurationCombosBox.Sensitive = stopped;
+            //			if (configurationCombosBox.Sensitive != stopped)
+            //				configurationCombosBox.Sensitive = stopped;
         }
 
         void ICommandBar.SetEnabled(bool enabled)
         {
             toolbarEnabled = false;
-            button.Sensitive = enabled;
+            //			button.Sensitive = enabled;
             matchEntry.Sensitive = enabled;
         }
         #endregion
