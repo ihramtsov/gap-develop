@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoDevelop.GapProxy", "Mon
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GapAddins", "GapAddins", "{5B2B300F-2800-47FA-B386-CEADFF399A40}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GapUtils", "GapUtils\GapUtils.csproj", "{8A1ABEBA-AF79-4567-B7AF-EB05A854A0F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -224,6 +226,22 @@ Global
 		{B4B6B92A-CC40-437C-A9A4-CF72424C03E4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B4B6B92A-CC40-437C-A9A4-CF72424C03E4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{B4B6B92A-CC40-437C-A9A4-CF72424C03E4}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{8A1ABEBA-AF79-4567-B7AF-EB05A854A0F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A1ABEBA-AF79-4567-B7AF-EB05A854A0F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A1ABEBA-AF79-4567-B7AF-EB05A854A0F6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{8A1ABEBA-AF79-4567-B7AF-EB05A854A0F6}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{8A1ABEBA-AF79-4567-B7AF-EB05A854A0F6}.DebugMac|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A1ABEBA-AF79-4567-B7AF-EB05A854A0F6}.DebugMac|Any CPU.Build.0 = Debug|Any CPU
+		{8A1ABEBA-AF79-4567-B7AF-EB05A854A0F6}.DebugMac|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{8A1ABEBA-AF79-4567-B7AF-EB05A854A0F6}.DebugMac|Mixed Platforms.Build.0 = Debug|Any CPU
+		{8A1ABEBA-AF79-4567-B7AF-EB05A854A0F6}.DebugWin32|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A1ABEBA-AF79-4567-B7AF-EB05A854A0F6}.DebugWin32|Any CPU.Build.0 = Debug|Any CPU
+		{8A1ABEBA-AF79-4567-B7AF-EB05A854A0F6}.DebugWin32|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{8A1ABEBA-AF79-4567-B7AF-EB05A854A0F6}.DebugWin32|Mixed Platforms.Build.0 = Debug|Any CPU
+		{8A1ABEBA-AF79-4567-B7AF-EB05A854A0F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A1ABEBA-AF79-4567-B7AF-EB05A854A0F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A1ABEBA-AF79-4567-B7AF-EB05A854A0F6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{8A1ABEBA-AF79-4567-B7AF-EB05A854A0F6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -242,6 +260,7 @@ Global
 		{DB96F55E-41C5-4330-A427-15A4EC028BBE} = {8F48ECA6-CFFF-4EBF-BC92-817199EDE9AF}
 		{B257A1A3-78DF-4F00-8053-D32A8B1EB679} = {8F48ECA6-CFFF-4EBF-BC92-817199EDE9AF}
 		{B4B6B92A-CC40-437C-A9A4-CF72424C03E4} = {5B2B300F-2800-47FA-B386-CEADFF399A40}
+		{8A1ABEBA-AF79-4567-B7AF-EB05A854A0F6} = {5B2B300F-2800-47FA-B386-CEADFF399A40}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = src\core\MonoDevelop.Startup\MonoDevelop.Startup.csproj

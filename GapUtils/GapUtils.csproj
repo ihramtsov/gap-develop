@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B4B6B92A-CC40-437C-A9A4-CF72424C03E4}</ProjectGuid>
+    <ProjectGuid>{8A1ABEBA-AF79-4567-B7AF-EB05A854A0F6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Monodevelop.GapProxy</RootNamespace>
-    <AssemblyName>Monodevelop.GapProxy</AssemblyName>
+    <RootNamespace>GapUtils</RootNamespace>
+    <AssemblyName>GapUtils</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\build\Addins\Monodevelop.GapProxy\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -31,10 +31,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f, processorArchitecture=MSIL" />
-    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f, processorArchitecture=MSIL" />
-    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f, processorArchitecture=MSIL" />
-    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f, processorArchitecture=MSIL" />
+    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\GtkSharp\2.12\lib\gtk-sharp-2.0\atk-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\GtkSharp\2.12\lib\gtk-sharp-2.0\glib-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\GtkSharp\2.12\lib\gtk-sharp-2.0\gtk-sharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,31 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands.cs" />
-    <Compile Include="GapRootDirectory\GapRootDirectoryPersistor.cs" />
-    <Compile Include="GapRootDirectory\GapRootDirectoryProcessor.cs" />
-    <Compile Include="GapRootDirectory\Windows\GapRootDirectoryWindow.cs" />
-    <Compile Include="InsertDateHandler.cs" />
+    <Compile Include="Folder\FolderFromFileSystemPicker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MonoDevelop.GapProxy.addin.xml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GapUtils\GapUtils.csproj">
-      <Project>{8a1abeba-af79-4567-b7af-eb05a854a0f6}</Project>
-      <Name>GapUtils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\src\core\mono-addins-master\Mono.Addins\Mono.Addins.csproj">
-      <Project>{739d598a-5b63-40f7-b9cc-0e2e35f6afc6}</Project>
-      <Name>Mono.Addins</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\src\core\Mono.Texteditor\Mono.TextEditor.csproj">
-      <Project>{a2329308-3751-4dbd-9a75-5f7b8b024625}</Project>
-      <Name>Mono.TextEditor</Name>
-    </ProjectReference>
     <ProjectReference Include="..\src\core\MonoDevelop.Core\MonoDevelop.Core.csproj">
       <Project>{7525bb88-6142-4a26-93b9-a30c6983390a}</Project>
       <Name>MonoDevelop.Core</Name>
