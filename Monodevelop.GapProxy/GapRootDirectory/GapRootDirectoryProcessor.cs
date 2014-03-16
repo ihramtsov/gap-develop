@@ -4,7 +4,7 @@ namespace MonoDevelop.GapProxy.GapRootDirectory
 {
     public interface IGapRootDirectoryProcessor
     {
-        void SelectGapRootDirectory();
+        string SelectGapRootDirectory();
     }
 
     public class GapRootDirectoryProcessor : IGapRootDirectoryProcessor
@@ -20,12 +20,14 @@ namespace MonoDevelop.GapProxy.GapRootDirectory
             this.gapRootDirectoryPersistor = gapRootDirectoryPersistor;
         }
 
-        public void SelectGapRootDirectory()
+        public string SelectGapRootDirectory()
         {
             var pickFolder = folderFromFileSystemPicker.PickFolder ();
 
             if (!string.IsNullOrEmpty (pickFolder))
                 gapRootDirectoryPersistor.PersistGapRootDirectoryPath(pickFolder);
+
+            return pickFolder;
         }
     }
 }

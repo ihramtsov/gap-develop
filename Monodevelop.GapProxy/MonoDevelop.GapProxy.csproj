@@ -47,7 +47,7 @@
     <Compile Include="Commands.cs" />
     <Compile Include="GapRootDirectory\GapRootDirectoryPersistor.cs" />
     <Compile Include="GapRootDirectory\GapRootDirectoryProcessor.cs" />
-    <Compile Include="GapRootDirectory\Windows\GapRootDirectoryWindow.cs" />
+    <Compile Include="GapRootDirectory\Windows\GapRootDirectoryDialog.cs" />
     <Compile Include="InsertDateHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

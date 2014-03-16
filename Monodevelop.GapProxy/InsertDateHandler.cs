@@ -12,7 +12,7 @@ namespace MonoDevelop.GapProxy
         protected override void Run()
         {
             var gapRootDirectoryWindow =
-                new GapRootDirectoryWindow (new GapRootDirectoryProcessor (new FolderFromFileSystemPicker (),
+                new GapRootDirectoryDialog (new GapRootDirectoryProcessor (new FolderFromFileSystemPicker (),
                                                                            new GapRootDirectoryPersistor ()));
             gapRootDirectoryWindow.Show ();
         }
