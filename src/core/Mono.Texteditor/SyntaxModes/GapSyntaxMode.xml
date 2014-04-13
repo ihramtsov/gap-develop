@@ -1,0 +1,127 @@
+
+<SyntaxMode name="Gap" mimeTypes="text/x-gap">
+  
+
+
+  <EolSpan color = "Comment(Line)" tagColor="comment.tag.line">#</EolSpan>
+
+
+
+	<Match color="Number">CSharpNumber</Match>
+
+	<Keywords color="Keyword(Jump)">
+		
+		<Word>function</Word>
+    <!--<Word>Comm</Word>
+    <Word>IsGroup</Word>
+    <Word>Order</Word>
+    <Word>Subgroup</Word>
+    <Word>AsSubgroup</Word>
+    <Word>Agemo</Word>
+    <Word>Centralizer</Word>
+    <Word>Centre</Word>
+    <Word>ClosureGroup</Word>
+    <Word>CommutatorSubgroup</Word>
+    <Word>ConjugateSubgroup</Word>
+    <Word>DerivedSubgroup</Word>
+    <Word>FrattiniSubgroup</Word>
+    <Word>Normalizer</Word>
+    <Word>SylowSubgroup</Word>
+    <Word>FactorGroup</Word>
+    <Word>CommutatorFactorGroup</Word>
+    <Word>DerivedSeries</Word>
+    <Word>LowerCentralSeries</Word>
+    <Word>UpperCentralSeries</Word>
+    <Word>AbelianInvariants</Word>
+    <Word>Exponent</Word>
+    <Word>Index</Word>
+    <Word>IsCyclic</Word>
+    <Word>IsNilpotent</Word>
+    <Word>IsElementaryAbelian</Word>
+    <Word>IsConjugate</Word>
+    <Word>IsNormal</Word>
+    <Word>IsSimple</Word>
+    <Word>IsSolvable</Word>
+    <Word>IsSubgroup</Word>
+    <Word>IdGroup</Word>
+    <Word>ConjugacyClasses</Word>
+    <Word>ConjugacyClass</Word>
+    <Word>NormalSubgroups</Word>
+    <Word>AsList</Word>-->
+	</Keywords>
+
+	<Keywords color="Keyword(Iteration)">
+		
+		<Word>while</Word>
+    <Word>repeat</Word>
+    <Word>until</Word>
+    <Word>for</Word>
+    
+	</Keywords>
+  <Keywords color="Keyword(Operator)" ignorecase="true">
+		<Word>and</Word>
+		<Word>elif</Word>
+		<Word>else</Word>
+		<Word>end</Word>
+		<Word>fi</Word>
+		<Word>if</Word>
+		<Word>in</Word>
+		<Word>local</Word>
+		<Word>mod</Word>
+		<Word>not</Word>
+    <Word>od</Word>
+    <Word>or</Word>
+    <Word>return</Word>
+    <Word>then</Word>
+    <Word>quit</Word>
+    <Word>QUIT</Word>
+    <Word>break</Word>
+    <Word>continue</Word>
+	</Keywords>
+
+	<Keywords color="Keyword(Constants)" ignorecase="true">
+		<Word>false</Word>
+		<Word>null</Word>
+		<Word>true</Word>
+	</Keywords>
+
+  <Span color = "String" rule="String" stopateol = "true">
+    <Begin>"</Begin>
+    <End>"</End>
+  </Span>
+
+  <Span color = "String(Single)" rule="Characters" stopateol = "true">
+    <Begin>'</Begin>
+    <End>'</End>
+  </Span>
+
+
+  <Keywords color="Keyword(Type)" ignorecase="true" >
+    <Word>Group</Word>
+  
+    <Word>lists</Word>
+    <Word>sets</Word>
+  </Keywords>
+
+	<Keywords color="Keyword(Void)">
+	</Keywords>
+
+
+	<Keywords color="Keyword(Property)">
+	</Keywords>
+
+	<Keywords color="Keyword(Declaration)">
+	</Keywords>
+
+	<Keywords color="Keyword(Parameter)">
+	</Keywords>
+
+
+	<Keywords color="Keyword(Operator Declaration)">
+	</Keywords>
+
+	<Keywords color="Keyword(Other)">
+	</Keywords>
+
+
+</SyntaxMode>
