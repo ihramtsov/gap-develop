@@ -1,0 +1,26 @@
+﻿<Addin namespace   = "MonoDevelop.GapHighlighting"
+       id          = "MonoDevelop.GapHighlighting"
+       name        = "MonoDevelop.GapHighlighting"
+       author      = "123"
+       copyright   = "123"
+       url         = "http://www.monodevelop.com"
+       description = "Provides a command to insert the date into the curent document."
+       category    = "Source Editor Extensions"
+       version     = "1.0">
+
+
+  <Dependencies>
+    <Addin id="::MonoDevelop.Ide" version="4.0"/>
+    <Addin id="::MonoDevelop.Core" version="4.0"/>
+  </Dependencies>
+
+  <Extension path = "/MonoDevelop/Core/MimeTypes">
+    <MimeType id="text/x-gap" _description="gap files" isText="true">
+      <File pattern="*.g" />
+    </MimeType>
+  </Extension>
+
+  <Extension path = "/MonoDevelop/Ide/StartupHandlers">
+    <Class class = "MonoDevelop.GapHighlighting.ConfigureHighlightingCommandHandler"/>
+  </Extension>
+</Addin>

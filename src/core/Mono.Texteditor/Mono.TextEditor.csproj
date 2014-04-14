@@ -327,9 +327,6 @@
     <EmbeddedResource Include="SyntaxModes\RazorSyntaxMode.xml">
       <LogicalName>RazorSyntaxMode.xml</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="SyntaxModes\FSharpSyntaxMode.xml">
-      <LogicalName>FSharpSyntaxMode.xml</LogicalName>
-    </EmbeddedResource>
     <EmbeddedResource Include="SyntaxModes\AspNetAshxSyntaxMode.xml">
       <LogicalName>AspNetAshxSyntaxMode.xml</LogicalName>
     </EmbeddedResource>
@@ -377,5 +374,4 @@
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>
-  <ItemGroup />
 </Project>

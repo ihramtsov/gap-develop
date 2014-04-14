@@ -74,10 +74,6 @@
 		<File pattern="*.sh" />
 		
 	</MimeType>
-	<MimeType id="text/x-gap" _description="gap files" isText="true">
-		<File pattern="*.g" />
-	</MimeType>
-	
 	
 </Extension>  
 
