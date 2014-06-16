@@ -14,10 +14,33 @@
     <Addin id="::MonoDevelop.Core" version="4.0"/>
   </Dependencies>
 
+  <Extension path = "/MonoDevelop/ProjectModel/LanguageBindings">
+    <LanguageBinding id = "MyLanguage"
+                     supportedextensions = ".g"
+                     class = "MonoDevelop.GapHighlighting.GapLanguageBinding" />
+  </Extension>
+
   <Extension path = "/MonoDevelop/Core/MimeTypes">
     <MimeType id="text/x-gap" _description="gap files" isText="true">
       <File pattern="*.g" />
     </MimeType>
+  </Extension>
+
+  <Extension path = "/MonoDevelop/Ide/TextEditorExtensions">
+    <!-- indent engine must be before the completion text editor engine,
+		otherwise stuff like
+
+		int Foo {
+		         get;private set';'
+
+		will end up as
+
+		int Foo {
+		         get;
+		         privaet;
+
+		-->
+    <Class fileExtensions = ".g" class = "MonoDevelop.GapHighlighting.Help" />
   </Extension>
 
   <Extension path = "/MonoDevelop/Ide/StartupHandlers">
