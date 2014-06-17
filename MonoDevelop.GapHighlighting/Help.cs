@@ -27,7 +27,7 @@ namespace MonoDevelop.GapHighlighting
             list.Sort();
             try
             {
-                string[] lines = System.IO.File.ReadAllLines(@"..\resources\function.txt");
+                string[] lines = System.IO.File.ReadAllLines(@"..\..\resources\function.txt");
                 foreach (string x in lines)
                 {
                     list.Add(x);
