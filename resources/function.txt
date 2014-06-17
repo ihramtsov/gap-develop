@@ -1,0 +1,20 @@
+Print( )
+rec
+local
+function
+Group( )
+Size( )
+IsAbelian( )
+IsNaturalAlternatingGroup( )
+SylowSubgroup( )
+Normalizer( )
+Centralizer( )
+IsElementaryAbelian( )
+SetName( )
+NaturalHomomorphismByNormalSubgroup( )
+Kernel( )
+Image( )
+PreImages( )
+Representative( )
+IsSimple( )
+IsomorphismTypeInfoFiniteSimpleGroup( )
