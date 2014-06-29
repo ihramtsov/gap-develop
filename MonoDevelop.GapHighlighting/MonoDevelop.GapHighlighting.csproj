@@ -54,6 +54,7 @@
     <Compile Include="ConfigureHighlightingCommandHandler.cs" />
     <Compile Include="GapLanguageBinding.cs" />
     <Compile Include="Help.cs" />
+    <Compile Include="HelpFileLoad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

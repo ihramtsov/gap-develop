@@ -21,28 +21,11 @@ namespace MonoDevelop.GapHighlighting
     class Help : CompletionTextEditorExtension 
     {
 
+        CompletionDataList list = HelpFileLoad.list;
+        
         ICompletionDataList InternalHandleCodeCompletion(CodeCompletionContext completionContext, char completionChar, bool ctrlSpace, ref int triggerWordLength)
         {
-            CompletionDataList list = new CompletionDataList();
-            list.Sort();
-            try
-            {
-                string[] lines = System.IO.File.ReadAllLines(@"..\..\resources\function.txt");
-                foreach (string x in lines)
-                {
-                    list.Add(x);
-                }
                 return list.Count > 0 ? list : null;
-            }
-            catch (Exception e)
-            {
-                LoggingService.LogError("Unexpected code completion exception." + Environment.NewLine +
-                    "FileName: " + Document.FileName + Environment.NewLine +
-                    "Position: line=" + completionContext.TriggerLine + " col=" + completionContext.TriggerLineOffset + Environment.NewLine +
-                    "Line text: " + Document.Editor.GetLineText(completionContext.TriggerLine),
-                    e);
-                return null;
-            }
         }
 
         public override string CompletionLanguage

@@ -45,5 +45,6 @@
 
   <Extension path = "/MonoDevelop/Ide/StartupHandlers">
     <Class class = "MonoDevelop.GapHighlighting.ConfigureHighlightingCommandHandler"/>
+    <Class class = "MonoDevelop.GapHighlighting.HelpFileLoad"/>
   </Extension>
 </Addin>
