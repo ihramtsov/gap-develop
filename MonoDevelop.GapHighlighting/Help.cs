@@ -1,19 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using MonoDevelop.Core;
-using MonoDevelop.Ide.FindInFiles;
-using System.Threading;
-using MonoDevelop.SourceEditor;
-using MonoDevelop.Ide;
 using MonoDevelop.Ide.Gui.Content;
-
-using ICSharpCode.NRefactory.CSharp.Resolver;
-
-using ICSharpCode.NRefactory.Semantics;
-using ICSharpCode.NRefactory.CSharp;
-using ICSharpCode.NRefactory.Completion;
 using MonoDevelop.Ide.CodeCompletion;
 
 namespace MonoDevelop.GapHighlighting
