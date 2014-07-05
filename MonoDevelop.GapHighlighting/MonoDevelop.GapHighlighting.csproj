@@ -56,6 +56,11 @@
     <Compile Include="Help.cs" />
     <Compile Include="HelpFileLoad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Suggest\CharValidator.cs" />
+    <Compile Include="Suggest\ComplectionResult.cs" />
+    <Compile Include="Suggest\FullSuggestListKeeper.cs" />
+    <Compile Include="Suggest\ISuggestBuilder.cs" />
+    <Compile Include="Suggest\SuggestProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="GapSyntaxMode.xml">
